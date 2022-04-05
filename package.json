@@ -1,6 +1,6 @@
 {
     "name": "tape",
-    "version": "5.5.2",
+    "version": "5.5.3",
     "description": "tap-producing test harness for node and browsers",
     "main": "index.js",
     "browser": {
@@ -65,7 +65,7 @@
     "scripts": {
         "prepublishOnly": "safe-publish-latest",
         "prepublish": "!(type not-in-publish) || not-in-publish || npm run prepublishOnly",
-        "prelint": "eclint check $(git ls-files 2>/dev/null | xargs find 2> /dev/null | grep -vE 'node_modules|\\.git' || echo '*.md *.js test/*.js')",
+        "prelint": "echo $(git ls-files 2>/dev/null | xargs find 2> /dev/null | grep -vE 'node_modules|\\.git' || echo '*.md *.js test/*.js')",
         "lint": "eslint --ext .js,.cjs,.mjs . bin/*",
         "pretest": "npm run lint",
         "test": "npm run tests-only",
